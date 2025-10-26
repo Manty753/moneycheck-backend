@@ -4,6 +4,7 @@ import { initDB } from "./config/db.js";
 import transactionsRoute from "./routes/transactionsRoute.js";
 import rateLimiter from "./middleware/rateLimiter.js";
 import job from "./config/cron.js";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
