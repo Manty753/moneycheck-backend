@@ -8,6 +8,13 @@ import job from "./config/cron.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 dotenv.config();
+app.use(
+  cors({
+    origin: "http://localhost:8081",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 if (process.env.NODE_ENV === "production") job.start();
 app.use(rateLimiter);
 app.use(express.json());
