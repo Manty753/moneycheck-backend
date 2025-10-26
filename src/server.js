@@ -10,7 +10,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 dotenv.config();
 app.use(cors());
-app.options("*", cors());
 if (process.env.NODE_ENV === "production") job.start();
 app.use(rateLimiter);
 app.use(express.json());
